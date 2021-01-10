@@ -19,12 +19,12 @@ apt-get install libsdl2-dev libsdl2-mixer-2.0-0 libncurses5-dev libncursesw5-dev
 ## Usage
 Once the code has been compiled run:
 ```
-mini-mp3-player -c {path-to-music-collection}
+sudo mini-mp3-player -c {path-to-music-collection}
 ```
 This command will create or refresh a collection file used by mini-mp3-player.
 If you already have a collection, only run:
 ```
-mini-mp3-player
+sudo mini-mp3-player
 ```
 
 Skip to next song pressing -n- or quit pressing -q-
