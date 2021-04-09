@@ -13,7 +13,8 @@ First thing you have to do is compiling the source code. Mini-mp3-player is code
  
 The code and compilation has only been tested in a Ubuntu system, the followed step are:
 ```
-apt-get install libsdl2-dev libsdl2-mixer-2.0-0 libncurses5-dev libncursesw5-dev && make install
+apt-get install libsdl2-dev libsdl2-mixer-2.0-0 libncurses5-dev libncursesw5-dev  libsdl2-mixer-dev mpg123 libmpg123-dev
+make install
 ```
 
 ## Usage
