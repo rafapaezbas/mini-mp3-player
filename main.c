@@ -49,13 +49,13 @@ void display_title(char *title){
 
 void clear_conf_file(){
     FILE *file;
-    file = fopen("/etc/mini-mp3-player/mini-mp3-player.conf", "w");
+    file = fopen("/usr/local/etc/mini-mp3-player/mini-mp3-player.conf", "w");
     fclose(file);
 }
 
 void append_to_conf_file(char *line){
     FILE *file;
-    file = fopen("/etc/mini-mp3-player/mini-mp3-player.conf", "a");
+    file = fopen("/usr/local/etc/mini-mp3-player/mini-mp3-player.conf", "a");
     fprintf(file, "%s\n", line);
     fclose(file);
 }
@@ -113,7 +113,7 @@ void read_file_line(char *line,char *path,int num){
 }
 
 void get_random_file( char *buff){
-    read_file_line(buff,"/etc/mini-mp3-player/mini-mp3-player.conf",rand() % NUM_OF_FILES);
+    read_file_line(buff,"/usr/local/etc/mini-mp3-player/mini-mp3-player.conf",rand() % NUM_OF_FILES);
     //Remove new line and white space in the end of the file names
     buff[strlen(buff)-1] = '\0';
 }
@@ -152,8 +152,8 @@ int count_lines_in_file(char *path){
 }
 
 void check_conf_file(){
-    if(!access("/etc/mini-mp3-player/mini-mp3-player.conf", F_OK) == 0) {
-        fprintf( stderr, "ERROR: Collection file does not exist in /etc/mini-mp3-player. Run mini-mp3-player with flag -c and the collection path to generate the file\n");
+    if(!access("/usr/local/etc/mini-mp3-player/mini-mp3-player.conf", F_OK) == 0) {
+        fprintf( stderr, "ERROR: Collection file does not exist in /usr/local/etc/mini-mp3-player. Run mini-mp3-player with flag -c and the collection path to generate the file\n");
         exit(0);
     }
 }
@@ -166,7 +166,7 @@ int main(int argc, char *argv[]) {
     }
 
     check_conf_file();
-    NUM_OF_FILES = count_lines_in_file("/etc/mini-mp3-player/mini-mp3-player.conf");
+    NUM_OF_FILES = count_lines_in_file("/usr/local/etc/mini-mp3-player/mini-mp3-player.conf");
 
     init_sdl();
     window = init_window();
